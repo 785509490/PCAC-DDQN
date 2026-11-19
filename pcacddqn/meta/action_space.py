@@ -1,10 +1,10 @@
 """The meta action space: a response program plus a DE configuration.
 
-The action table is deliberately small and versioned. It is produced by the
-configuration screen (`scripts/screen_actions.py`) and must contain the current
-memory operator (m=60, rho=0.5, DE rand/1 CR=F=0.5) as a safe default. The
-provisional table below is used by the Phase-0 interface tests and by the
-screen itself; the screen overwrites it with a JSON table.
+The paper's 14 actions are stored in ``configs/action_table.json`` and loaded
+with ``load_action_table``. The table contains 12 memory variants, one elite
+action, and one inherit action, and each action carries a DE configuration.
+The built-in ``ACTION_TABLE`` below is an 11-action fallback used when the JSON
+file is not available.
 """
 
 from __future__ import annotations

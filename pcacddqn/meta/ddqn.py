@@ -1,7 +1,7 @@
 """A small numpy DDQN: MLP, Adam, replay buffer, target network.
 
-The state/action dimensions are tiny (22 x ~12), so a numpy implementation is
-enough and avoids a PyTorch dependency. The class is deliberately independent
+The state and action spaces are small (30 state features and 14 actions), so a
+numpy implementation is enough and avoids a PyTorch dependency. The class is deliberately independent
 of the benchmark; the training script owns episodes, rewards, and evaluation.
 """
 

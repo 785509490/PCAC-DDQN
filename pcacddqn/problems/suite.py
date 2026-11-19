@@ -29,11 +29,11 @@ def _spec(**kw) -> ProblemSpec:
 SPECS: list[ProblemSpec] = [
     # -- A: calibration ----------------------------------------------------
     _spec(pid="A1", cls="A", base="quad", mode="static",
-          geometry="convex", change="none", law="drift", train=False,
+          geometry="convex", change="none", law="drift",
           intensity=False,
           note="static problem: conditioning must be zero"),
     _spec(pid="A2", cls="A", base="quad", mode="translate",
-          geometry="convex", change="none", law="drift", train=False,
+          geometry="convex", change="none", law="drift",
           intensity=False,
           note="linear drift, fixed severity: conditioning must be zero"),
 
@@ -46,7 +46,7 @@ SPECS: list[ProblemSpec] = [
           schedule_seed=PUBLIC_SCHEDULES[1]),
     _spec(pid="B3", cls="B", base="rot", mode="translate",
           geometry="convex", change="scale", law="regime", reg_len=3,
-          schedule_seed=PUBLIC_SCHEDULES[2], train=False),
+          schedule_seed=PUBLIC_SCHEDULES[2]),
 
     # -- C: online ---------------------------------------------------------
     _spec(pid="C1", cls="C", base="quad", mode="translate",
@@ -58,11 +58,9 @@ SPECS: list[ProblemSpec] = [
     _spec(pid="C4", cls="C", base="rot", mode="translate",
           geometry="convex", change="scale", law="regime", reg_len=3),
     _spec(pid="C5", cls="C", base="quad", mode="shape",
-          geometry="concave", change="curvature", law="regime", reg_len=3,
-          train=False),
+          geometry="concave", change="curvature", law="regime", reg_len=3),
     _spec(pid="C6", cls="C", base="rot", mode="roleswitch",
-          geometry="sphere", change="scale", law="regime", reg_len=3, M=3,
-          train=False),
+          geometry="sphere", change="scale", law="regime", reg_len=3, M=3),
 
     # -- D: regime switching every environment -----------------------------
     _spec(pid="D1", cls="D", base="rot", mode="roleswitch",
@@ -74,11 +72,9 @@ SPECS: list[ProblemSpec] = [
     _spec(pid="D4", cls="D", base="quad", mode="roleswitch",
           geometry="convex", change="curvature", law="regime", reg_len=1),
     _spec(pid="D5", cls="D", base="rot", mode="chain",
-          geometry="linear", change="shift", law="regime", reg_len=1,
-          train=False),
+          geometry="linear", change="shift", law="regime", reg_len=1),
     _spec(pid="D6", cls="D", base="multi", base_amp=0.25, mode="translate",
-          geometry="sphere", change="curvature", law="regime", reg_len=1, M=3,
-          train=False),
+          geometry="sphere", change="curvature", law="regime", reg_len=1, M=3),
 
     # -- E: random jumps ---------------------------------------------------
     _spec(pid="E1", cls="E", base="quad", mode="translate",
@@ -87,16 +83,16 @@ SPECS: list[ProblemSpec] = [
           geometry="convex", change="none", law="jump", jump_variant="hetero"),
     _spec(pid="E3", cls="E", base="link", mode="chain",
           geometry="sphere", change="none", law="jump", jump_variant="hetero",
-          M=3, train=False),
+          M=3),
     _spec(pid="E4", cls="E", base="quad", mode="translate",
           geometry="convex", change="none", law="jump", jump_variant="homo",
-          train=False, note="negative control: fixed jump magnitude"),
+          note="negative control: fixed jump magnitude"),
     _spec(pid="E5", cls="E", base="multi", base_amp=0.25, mode="shape",
           geometry="convex", change="none", law="jump", jump_variant="homo",
-          train=False, note="negative control: fixed jump magnitude"),
+          note="negative control: fixed jump magnitude"),
     _spec(pid="E6", cls="E", base="link", mode="chain",
           geometry="sphere", change="none", law="jump", jump_variant="homo",
-          M=3, train=False, note="negative control: fixed jump magnitude"),
+          M=3, note="negative control: fixed jump magnitude"),
 ]
 
 SPEC_BY_ID = {s.pid: s for s in SPECS}
@@ -158,10 +154,8 @@ def class_of(pid: str) -> str:
     return SPEC_BY_ID[pid].cls
 
 
-def ids(cls: str | None = None, train: bool | None = None) -> list[str]:
+def ids(cls: str | None = None) -> list[str]:
     out = SPECS
     if cls is not None:
         out = [s for s in out if s.cls == cls]
-    if train is not None:
-        out = [s for s in out if s.train == train]
     return [s.pid for s in out]

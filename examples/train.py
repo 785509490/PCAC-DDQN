@@ -255,6 +255,7 @@ def _save(agent, out: str, normalizer, table, val_migd, epoch, train_pids,
         "val_migd": val_migd,
         "epoch": epoch,
         "train_pids": list(train_pids),
+        "val_pids": list(VAL4),
         "tauts": list(tauts),
     })
 

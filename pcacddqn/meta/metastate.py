@@ -1,30 +1,25 @@
-"""State features for the per-change meta-policy.
+"""State features for the per-change policy.
 
-The pre-action block is cheap and policy-independent:
+The 27 pre-action features are observable before the action:
 
-    11 features from `StateTracker` (change + convergence, no extra FE)
-     1 objective count
+    11 change and convergence features from `StateTracker`
+     3 global features (number of objectives, change interval, number of
+       environments, the last two normalized)
      7 decision-space archive features (no archive re-evaluation)
-     5 archive-probe features (paid for, see `probe_archive`)
-     1 decision-subspace angle between the population and the archive
+     6 archive-probe features (paid for, see `probe_archive`)
 
 The probe is the one part that spends function evaluations. It evaluates a
-farthest-point sample of the archive in the new environment *before* the
-policy acts, so the policy knows whether memory is worth using instead of
-learning that only from the delayed post-response signal. The caller reports
-the probe cost separately from the response cost.
+farthest-point sample of the archive in the new environment before the policy
+acts, so the policy knows whether memory is worth using instead of learning
+that only from the delayed post-response signal. The caller reports the probe
+cost separately from the response cost.
 
-The two post-response features (`useful`, `dom`) remain available after a
-memory action and are appended to the next state with a mask. No problem id,
-instance seed, schedule seed, future law value, or true Pareto front is
-exposed here.
+Three post-action features (usable fraction, domination fraction, mask) are
+appended to the next state, so the policy sees whether the last use of memory
+worked. No problem id, instance seed, schedule seed, future law value, or true
+Pareto front is exposed here.
 
-Two later additions were tried and removed: initial-context features and a
-fixed objective-scale block. Both increased the state to 43 dimensions and
-made the one-step LOPO model worse (ridge 0.199 and 0.168 on the five-action
-gate, against 0.153 for this 28-dimensional state); the extra context was
-overfit, not informative. Keep this file at 28 dimensions unless a new gate
-says otherwise.
+Initial-context and objective-scale features were tested and are not used.
 """
 
 from __future__ import annotations

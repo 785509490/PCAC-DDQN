@@ -56,6 +56,8 @@ print(igd(population.obj, problem.true_pf(t)))
 
 `build` takes the problem ID, the instance seed, the decision dimensionality, the number of environments, the change interval, and the number of initial generations. Reference fronts are analytic and generated at run time, so no data files are needed.
 
+The benchmark does not encode a split. The training script uses the paper split, with 13 training problems, 4 validation problems, and 6 test problems.
+
 ## Repository layout
 
 ```

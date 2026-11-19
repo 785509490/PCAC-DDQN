@@ -1,4 +1,4 @@
-"""Small policy wrappers for the meta runner and the gate."""
+"""Small policy wrappers for the meta runner and the training script."""
 
 from __future__ import annotations
 
@@ -47,7 +47,7 @@ class QPolicy:
 
     `agent` only needs a `q_values(state)` method and, for exploration, an
     `act(state, epsilon)` method; this keeps the policy independent of the
-    DDQN implementation and lets the gate use a mock.
+    DDQN implementation and lets the training script use a mock.
     """
 
     agent: object

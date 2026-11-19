@@ -31,7 +31,6 @@ class ProblemSpec:
     schedule_seed: int | None = None   # not None only for class B
     intensity: bool = True             # heterogeneous per-change magnitude
     intensity_seed: str = "schedule"   # "schedule" (old B) or "instance" (v4)
-    train: bool = True
     note: str = ""
 
 
