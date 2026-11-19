@@ -1,0 +1,212 @@
+[
+  {
+    "name": "elite-f0.90-s0.10-de3",
+    "config_id": 3,
+    "program": {
+      "kind": "elite",
+      "rho": 0.0,
+      "frac": 0.9,
+      "sigma": 0.1,
+      "m": 60,
+      "max_fronts": 20,
+      "recent_only": false,
+      "alpha": 0.0,
+      "p": 0.0
+    }
+  },
+  {
+    "name": "inherit-de3",
+    "config_id": 3,
+    "program": {
+      "kind": "inherit",
+      "rho": 0.0,
+      "frac": 0.9,
+      "sigma": 0.1,
+      "m": 60,
+      "max_fronts": 20,
+      "recent_only": false,
+      "alpha": 0.0,
+      "p": 0.0
+    }
+  },
+  {
+    "name": "mem-m60-r0.25-f20-de27",
+    "config_id": 27,
+    "program": {
+      "kind": "memory",
+      "rho": 0.25,
+      "frac": 0.9,
+      "sigma": 0.1,
+      "m": 60,
+      "max_fronts": 20,
+      "recent_only": false,
+      "alpha": 0.0,
+      "p": 0.0
+    }
+  },
+  {
+    "name": "mem-m60-r0.50-f20-de3",
+    "config_id": 3,
+    "program": {
+      "kind": "memory",
+      "rho": 0.5,
+      "frac": 0.9,
+      "sigma": 0.1,
+      "m": 60,
+      "max_fronts": 20,
+      "recent_only": false,
+      "alpha": 0.0,
+      "p": 0.0
+    }
+  },
+  {
+    "name": "mem-m60-r0.50-f20-de4",
+    "config_id": 4,
+    "program": {
+      "kind": "memory",
+      "rho": 0.5,
+      "frac": 0.9,
+      "sigma": 0.1,
+      "m": 60,
+      "max_fronts": 20,
+      "recent_only": false,
+      "alpha": 0.0,
+      "p": 0.0
+    }
+  },
+  {
+    "name": "mem-m60-r0.50-f20-de40",
+    "config_id": 40,
+    "program": {
+      "kind": "memory",
+      "rho": 0.5,
+      "frac": 0.9,
+      "sigma": 0.1,
+      "m": 60,
+      "max_fronts": 20,
+      "recent_only": false,
+      "alpha": 0.0,
+      "p": 0.0
+    }
+  },
+  {
+    "name": "mem-m60-r0.75-f20-de27",
+    "config_id": 27,
+    "program": {
+      "kind": "memory",
+      "rho": 0.75,
+      "frac": 0.9,
+      "sigma": 0.1,
+      "m": 60,
+      "max_fronts": 20,
+      "recent_only": false,
+      "alpha": 0.0,
+      "p": 0.0
+    }
+  },
+  {
+    "name": "mem-m60-r0.75-f20-de40",
+    "config_id": 40,
+    "program": {
+      "kind": "memory",
+      "rho": 0.75,
+      "frac": 0.9,
+      "sigma": 0.1,
+      "m": 60,
+      "max_fronts": 20,
+      "recent_only": false,
+      "alpha": 0.0,
+      "p": 0.0
+    }
+  },
+  {
+    "name": "mem-m80-r0.25-f20-de27",
+    "config_id": 27,
+    "program": {
+      "kind": "memory",
+      "rho": 0.25,
+      "frac": 0.9,
+      "sigma": 0.1,
+      "m": 80,
+      "max_fronts": 20,
+      "recent_only": false,
+      "alpha": 0.0,
+      "p": 0.0
+    }
+  },
+  {
+    "name": "mem-m80-r0.25-f20-de3",
+    "config_id": 3,
+    "program": {
+      "kind": "memory",
+      "rho": 0.25,
+      "frac": 0.9,
+      "sigma": 0.1,
+      "m": 80,
+      "max_fronts": 20,
+      "recent_only": false,
+      "alpha": 0.0,
+      "p": 0.0
+    }
+  },
+  {
+    "name": "mem-m80-r0.25-f20-de40",
+    "config_id": 40,
+    "program": {
+      "kind": "memory",
+      "rho": 0.25,
+      "frac": 0.9,
+      "sigma": 0.1,
+      "m": 80,
+      "max_fronts": 20,
+      "recent_only": false,
+      "alpha": 0.0,
+      "p": 0.0
+    }
+  },
+  {
+    "name": "mem-m80-r0.50-f20-de3",
+    "config_id": 3,
+    "program": {
+      "kind": "memory",
+      "rho": 0.5,
+      "frac": 0.9,
+      "sigma": 0.1,
+      "m": 80,
+      "max_fronts": 20,
+      "recent_only": false,
+      "alpha": 0.0,
+      "p": 0.0
+    }
+  },
+  {
+    "name": "mem-m80-r0.50-f20-de40",
+    "config_id": 40,
+    "program": {
+      "kind": "memory",
+      "rho": 0.5,
+      "frac": 0.9,
+      "sigma": 0.1,
+      "m": 80,
+      "max_fronts": 20,
+      "recent_only": false,
+      "alpha": 0.0,
+      "p": 0.0
+    }
+  },
+  {
+    "name": "mem-m80-r0.75-f20-de40",
+    "config_id": 40,
+    "program": {
+      "kind": "memory",
+      "rho": 0.75,
+      "frac": 0.9,
+      "sigma": 0.1,
+      "m": 80,
+      "max_fronts": 20,
+      "recent_only": false,
+      "alpha": 0.0,
+      "p": 0.0
+    }
+  }
+]
